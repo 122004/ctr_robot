@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "..\\..\\..,..\\..\\..",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "arduino:avr:uno",
+  "hardwareFolders": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\Owner\\Documents\\Arduino\\libraries",
+  "sketchLocation": "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control"
+}

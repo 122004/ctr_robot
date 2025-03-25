@@ -1,0 +1,18 @@
+#line 1 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\.vscode\\arduino.json"
+{
+  "port": "COM6",
+  "configuration": "",
+  "output": "build",
+  "board": "arduino:avr:uno",
+  "programmer": "",
+  "useProgrammer": false,
+  "configurationRequired": false,
+  "monitorPortSettings": {
+    "port": "COM6",
+    "baudRate": 115200,
+    "lineEnding": "\r\n",
+    "dataBits": 8,
+    "parity": "none",
+    "stopBits": "one"
+  }
+}
