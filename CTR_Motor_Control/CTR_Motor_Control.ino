@@ -8,7 +8,7 @@ int basepos = 0;
 int armpos = 0;
 int dishpos = 0;
 
-bool compost = false;
+bool compost = true;
 bool trash = false;
 bool recycling = false;
 
@@ -22,6 +22,7 @@ void setup() {
 
 void loop() {
   if (compost == true){
+    //move to recepticle
     delay(100);
     base.write(45);
     delay(100);
@@ -29,10 +30,19 @@ void loop() {
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
+    //return to starting position
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    compost = false;
+    
   }
 
   if (trash == true){
+    //move to recepticle
     delay(100);
     base.write(90);
     delay(100);
@@ -40,18 +50,34 @@ void loop() {
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
-  }
-
-  if (recycling == true){
-    delay(100);
+    //return to starting position
     base.write(135);
     delay(100);
     arm.write(0);
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
+    trash = false;
+    
   }
- // need to add return to initial set position
+
+  if (recycling == true){
+    //move to recepticle
+    delay(100);        
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    //return to starting position
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    recycling = false;
+  }
+
 }

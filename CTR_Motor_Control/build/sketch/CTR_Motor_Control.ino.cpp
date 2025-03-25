@@ -10,14 +10,14 @@ int basepos = 0;
 int armpos = 0;
 int dishpos = 0;
 
-bool compost = false;
+bool compost = true;
 bool trash = false;
 bool recycling = false;
 
 
 #line 16 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void setup();
-#line 23 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
+#line 25 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void loop();
 #line 16 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void setup() {
@@ -25,40 +25,69 @@ void setup() {
   arm.attach(10);
   dish.attach(11);
 
+
+
 }
 
 void loop() {
   if (compost == true){
+    //move to recepticle
     delay(100);
     base.write(45);
     delay(100);
-    arm.write();
+    arm.write(0);
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
+    //return to starting position
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    compost = false;
+    
   }
 
   if (trash == true){
+    //move to recepticle
     delay(100);
     base.write(90);
     delay(100);
-    arm.write();
+    arm.write(0);
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
+    //return to starting position
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    trash = false;
+    
   }
 
   if (recycling == true){
-    delay(100);
+    //move to recepticle
+    delay(100);        
     base.write(135);
     delay(100);
-    arm.write();
+    arm.write(0);
     delay(100);
     dish.write(180);
     delay(100);
-    dish.write(0);
+    //return to starting position
+    base.write(135);
+    delay(100);
+    arm.write(0);
+    delay(100);
+    dish.write(180);
+    delay(100);
+    recycling = false;
   }
- // add return to initial set position
+
 }
+

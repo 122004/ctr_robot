@@ -6,6 +6,7 @@
       "includePath": [
         "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino/**",
         "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard/**",
+        "C:\\Users\\Owner\\Documents\\Arduino\\libraries\\Servo\\src/**",
         "C:\\Users\\Owner\\Documents\\Arduino\\libraries/**",
         "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control/**"
       ],
@@ -35,6 +36,7 @@
         "-DARDUINO_ARCH_AVR",
         "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
         "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard",
+        "-IC:\\Users\\Owner\\Documents\\Arduino\\libraries\\Servo\\src",
         "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\build\\sketch\\CTR_Motor_Control.ino.cpp",
         "-o",
         "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\build\\sketch\\CTR_Motor_Control.ino.cpp.o"
