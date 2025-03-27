@@ -4,7 +4,7 @@
   "configuration": "",
   "output": "build",
   "board": "arduino:avr:uno",
-  "programmer": "",
+  "programmer": "Arduino as ISP",
   "useProgrammer": false,
   "configurationRequired": false,
   "monitorPortSettings": {
