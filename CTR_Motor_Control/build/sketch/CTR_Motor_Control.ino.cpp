@@ -11,8 +11,8 @@ int armpos = 0;
 int dishpos = 0;
 
 bool compost = false;
-bool trash = false;
-bool recycling = true;
+bool trash = true;
+bool recycling = false;
 int count = 0;
 
 
@@ -33,67 +33,81 @@ void loop() {
 
   //for testing
   //count = count + 10;
-  //dish.write(count);
+  //arm.write(count);
   //delay(1000);
+
+
+  //return to starting position
+  dish.write(125);
+  delay(2500);
+  arm.write(130);
+  delay(2500);
+  base.write(115);
+  delay(2500);
+  
 
   if (compost == true){
     //move to recepticle
-    delay(3000);
+    delay(2500);
     base.write(80);
-    delay(3000);
-    arm.write(15);
-    delay(3000);
+    delay(2500);
+    arm.write(100);
+    delay(2500);
     dish.write(0);
-    delay(3000);
+    delay(2500);
     //return to starting position
     dish.write(125);
-    delay(3000);
-    arm.write(0);
-    delay(3000);
+    delay(2500);
+    arm.write(130);
+    delay(2500);
     base.write(115);
-    delay(3000);
+    delay(2500);
     compost = false;
+    trash = true;
     
   }
 
   if (trash == true){
     //move to recepticle
-    delay(3000);
+    delay(2500);
     base.write(115);
-    delay(3000);
-    arm.write(20);
-    delay(3000);
+    delay(2500);
+    arm.write(150);
+    delay(2500);
     dish.write(0);
-    delay(3000);
+    delay(2500);
     //return to starting position
     dish.write(125);
-    delay(3000);
-    arm.write(5);
-    delay(3000);
+    delay(2500);
+    arm.write(130);
+    delay(2500);
     base.write(115);
-    delay(3000);
-    //trash = false;
+    delay(2500);
+    trash = false;
+    recycling = true;
     
   }
 
   if (recycling == true){
     //move to recepticle
-    delay(3000);
-    base.write(150);
-    delay(3000);
-    arm.write(20);
-    delay(3000);
+    delay(2500);
+    base.write(170);
+    delay(2500);
+    arm.write(90);
+    delay(2500);
     dish.write(0);
-    delay(3000);
+    delay(2500);
     //return to starting position
     dish.write(125);
-    delay(3000);
-    arm.write(10);
-    delay(3000);
+    delay(2500);
+    arm.write(120);
+    delay(2500);
     base.write(115);
-    delay(3000);
-    //recycling = false;
+    delay(2500);
+    recycling = false;
   }
+
+
 
 }
 
