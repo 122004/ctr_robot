@@ -10,9 +10,9 @@ int basepos = 0;
 int armpos = 0;
 int dishpos = 0;
 
-bool compost = true;
+bool compost = false;
 bool trash = false;
-bool recycling = false;
+bool recycling = true;
 int count = 0;
 
 
@@ -52,47 +52,47 @@ void loop() {
     delay(3000);
     base.write(115);
     delay(3000);
-    //compost = false;
+    compost = false;
     
   }
 
   if (trash == true){
     //move to recepticle
-    delay(100);
-    base.write(90);
-    delay(100);
-    arm.write(0);
-    delay(100);
+    delay(3000);
+    base.write(115);
+    delay(3000);
+    arm.write(20);
+    delay(3000);
     dish.write(0);
-    delay(100);
+    delay(3000);
     //return to starting position
-    base.write(135);
-    delay(100);
-    arm.write(0);
-    delay(100);
-    dish.write(180);
-    delay(100);
-    trash = false;
+    dish.write(125);
+    delay(3000);
+    arm.write(5);
+    delay(3000);
+    base.write(115);
+    delay(3000);
+    //trash = false;
     
   }
 
   if (recycling == true){
     //move to recepticle
-    delay(100);        
-    base.write(135);
-    delay(100);
-    arm.write(0);
-    delay(100);
-    dish.write(180);
-    delay(100);
+    delay(3000);
+    base.write(150);
+    delay(3000);
+    arm.write(20);
+    delay(3000);
+    dish.write(0);
+    delay(3000);
     //return to starting position
-    base.write(135);
-    delay(100);
-    arm.write(0);
-    delay(100);
-    dish.write(180);
-    delay(100);
-    recycling = false;
+    dish.write(125);
+    delay(3000);
+    arm.write(10);
+    delay(3000);
+    base.write(115);
+    delay(3000);
+    //recycling = false;
   }
 
 }
