@@ -15,17 +15,19 @@ bool trash = true;
 bool recycling = false;
 int count = 0;
 
+int switchPin = 8;
 
-#line 17 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
+
+#line 19 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void setup();
-#line 25 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
+#line 27 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void loop();
-#line 17 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
+#line 19 "C:\\Users\\Owner\\Downloads\\Trash robot\\ctr_robot\\CTR_Motor_Control\\CTR_Motor_Control.ino"
 void setup() {
   base.attach(9);
   arm.attach(10);
   dish.attach(11);
-  
+  pinMode(switchPin, INPUT_PULLUP);
  
 }
 
@@ -36,78 +38,78 @@ void loop() {
   //arm.write(count);
   //delay(1000);
 
-
-  //return to starting position
-  dish.write(125);
-  delay(2500);
-  arm.write(130);
-  delay(2500);
-  base.write(115);
-  delay(2500);
+  if (digitalRead(switchPin) == LOW) {
+    //return to starting position
+    dish.write(125);
+    delay(2500);
+    arm.write(130);
+    delay(2500);
+    base.write(115);
+    delay(2500);
   
 
-  if (compost == true){
-    //move to recepticle
-    delay(2500);
-    base.write(80);
-    delay(2500);
-    arm.write(100);
-    delay(2500);
-    dish.write(0);
-    delay(2500);
-    //return to starting position
-    dish.write(125);
-    delay(2500);
-    arm.write(130);
-    delay(2500);
-    base.write(115);
-    delay(2500);
-    compost = false;
-    trash = true;
+    if (compost == true){
+      //move to recepticle
+      delay(2500);
+      base.write(80);
+      delay(2500);
+      arm.write(100);
+      delay(2500);
+      dish.write(0);
+      delay(2500);
+      //return to starting position
+      dish.write(125);
+      delay(2500);
+      arm.write(130);
+      delay(2500);
+      base.write(115);
+      delay(2500);
+      compost = false;
+      trash = true;
     
+   }
+
+    if (trash == true){
+      //move to recepticle
+      delay(2500);
+      base.write(115);
+      delay(2500);
+      arm.write(150);
+      delay(2500);
+      dish.write(0);
+      delay(2500);
+      //return to starting position
+      dish.write(125);
+      delay(2500);
+      arm.write(130);
+      delay(2500);
+      base.write(115);
+      delay(2500);
+      trash = false;
+      recycling = true;
+      
+    }
+
+    if (recycling == true){
+      //move to recepticle
+      delay(2500);
+      base.write(170);
+      delay(2500);
+      arm.write(90);
+      delay(2500);
+      dish.write(0);
+      delay(2500);
+      //return to starting position
+      dish.write(125);
+      delay(2500);
+      arm.write(120);
+      delay(2500);
+      base.write(115);
+      delay(2500);
+      recycling = false;
+    }
+
   }
-
-  if (trash == true){
-    //move to recepticle
-    delay(2500);
-    base.write(115);
-    delay(2500);
-    arm.write(150);
-    delay(2500);
-    dish.write(0);
-    delay(2500);
-    //return to starting position
-    dish.write(125);
-    delay(2500);
-    arm.write(130);
-    delay(2500);
-    base.write(115);
-    delay(2500);
-    trash = false;
-    recycling = true;
-    
-  }
-
-  if (recycling == true){
-    //move to recepticle
-    delay(2500);
-    base.write(170);
-    delay(2500);
-    arm.write(90);
-    delay(2500);
-    dish.write(0);
-    delay(2500);
-    //return to starting position
-    dish.write(125);
-    delay(2500);
-    arm.write(120);
-    delay(2500);
-    base.write(115);
-    delay(2500);
-    recycling = false;
-  }
-
-
 
 }
 
